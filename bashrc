@@ -7,7 +7,8 @@ alias cdpsf='cd ~/../../../t-subhup/pss/ProgSynth_fall2016/'
 alias cdpsc='cd ~/../../../t-subhup/pss/ProgSynth_code/'
 alias cdppp='cd ~/../../../t-subhup/pss/pure/ProgSynth_code/'
 
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/var/storage/shared/mscog/t-subhup/pss/ProgSynth_code:$LD_LIBRARY_PATH"
 export CUDA_HOME=/usr/local/cuda
 
 if [[ `hostname` == gcrgpu* ]] || [[ `hostname` == phlrr* ]] ;
