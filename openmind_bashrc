@@ -1,0 +1,57 @@
+# openmind .bashrc
+
+# Source global definitions
+# if [-f/etc/.bashrc ]; then
+  # . /etc/.bashrc
+# fi
+
+# Add proto compiler to path
+export PATH=/om/user/ilkery/usr/local/bin:$PATH
+
+# Prepare to add modules
+module add harvard/centos6/gtk+-2.24.4 harvard/centos6/ffmpeg-9.24.2013 harvard/centos6/atlas3.10.1 gcc/4.8.4 openmind/cmake/2.8.12.2
+module add openmind/libjpeg-turbo/1.3.1 openmind/openblas/0.2.9.rc2-singlethread
+module add openmind/srun.x11/v1
+
+alias vib='vim ~/.bashrc'
+alias sob='source ~/.bashrc'
+alias subgoals='cd ~/projects/subgoals/subgoal-inf'
+alias ls='ls -allh --color --group-directories-first'
+
+# Common commands
+# sbatch --gres=gpu:1 --mem=16000 -n 4 my_gpu_script arg1 arg2
+# squeue
+# scancel JOBID
+# srun --pty --gres=gpu:2 --mem=8000 bash
+
+# Tejas Torch
+export PATH=/om/user/tejask/mytorch/bin:$PATH
+export LD_LIBRARY_PATH=/om/user/tejask/mytorch/lib:$LD_LIBRARY_PATH
+
+# More modules
+module add gcc
+module add openmind/miniconda/3.18.3-python2
+# module add openmind/anaconda/2.1.0
+module add openmind/libjpeg-turbo/1.3.1
+# module load cuda55/blas/5.5.22 cuda55/fft/5.5.22 cuda55/profiler/5.5.22 cuda55/tdk/5.319.85 cuda55/toolkit/5.5.22
+# module load cuda65/blas/6.5.14 cuda65/fft/6.5.14 cuda65/gdk/340.29 cuda65/nsight/6.5.14 cuda65/profiler/6.5.14 cuda65/toolkit/6.5.14
+# module add cuda70/blas/7.0.28 cuda70/fft/7.0.28 cuda70/gdk/346.46 cuda70/nsight/7.0.28 cuda70/profiler/7.0.28 cuda70/toolkit/7.0.28
+module add slurm
+module add openmind/tmux/1.9a
+module add hdf5_18/1.8.12
+module add mit/matlab/2015a
+# module add openmind/miniconda/4.0.5-python3  # note, python is version 3, other miniconda should be fine
+# module add openmind/cuda/7.5
+# module add openmind/cudnn/7.5-5.1
+module add openmind/cudnn/8.0-5.1
+module add openmind/cuda/8.0
+
+# added by Anaconda 2.3.0 installer
+# export PATH="/home/surya/anaconda/bin:$PATH"
+
+# Makes Torch work!
+. /home/surya/torch/install/bin/torch-activate
+
+# Add current directory to bash prompt
+PS1='$(whoami):\w\$ '
+# export PS1='$(whoami)@$(hostname):$(pwd)'
